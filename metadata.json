@@ -1,0 +1,6 @@
+{
+  "name": "PDF Study Guide & Egyptian Arabic AI Tutor",
+  "description": "Convert PDF lecture slides into high-yield study guides with authentic Egyptian Arabic explanations, doctor-level university exam questions, and audio note synthesis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

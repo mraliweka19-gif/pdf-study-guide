@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Amiri';
+  src: url('/fonts/Amiri-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+.font-cairo {
+  font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
+}
+
+.font-inter {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Print/A4 styles */
+@page {
+  size: A4 portrait;
+  margin: 12mm 10mm;
+}
+
+@media print {
+  html, body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 11pt !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .pdf-export-card {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    -webkit-break-inside: avoid !important;
+    margin-bottom: 8mm !important;
+    box-shadow: none !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+
+  .export-capture-root {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    -webkit-break-inside: avoid !important;
+  }
+
+  .print-page-break {
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+
+  img {
+    max-height: 380px !important;
+    page-break-inside: avoid !important;
+  }
+}
+
+.export-capture-root {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  direction: rtl;
+  text-align: right;
+}
+
+.export-capture-root .pdf-export-card,
+.export-capture-root .rounded-3xl,
+.export-capture-root .rounded-2xl {
+  break-inside: avoid !important;
+  page-break-inside: avoid !important;
+  -webkit-break-inside: avoid !important;
+}
+
+.export-capture-root .space-y-6 > * {
+  margin-top: 0 !important;
+}
+
+.export-capture-root .study-guide-title,
+.export-capture-root .study-guide-subtitle,
+.export-capture-root .pdf-arabic-title,
+.export-capture-root [dir="rtl"] {
+  direction: rtl !important;
+  text-align: right !important;
+  unicode-bidi: plaintext !important;
+}
+
+.export-capture-root .question-layout {
+  display: grid !important;
+  grid-template-columns: 1.2fr 0.8fr !important;
+  gap: 0.75rem !important;
+  align-items: start !important;
+}
+
+.export-capture-root .question-column {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: plaintext !important;
+}
+
+.export-capture-root .answer-column {
+  direction: rtl !important;
+  text-align: right !important;
+  unicode-bidi: plaintext !important;
+}
+
+.export-capture-root img {
+  max-height: 360px;
+  object-fit: contain;
+}
